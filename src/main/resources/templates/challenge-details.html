@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge Details</title>
+    <link rel="stylesheet" href="/challenges.css">
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <h1 class="title" th:text="${challenge.title}"></h1>
+
+    <div class="image-box" th:if="${challenge.image != null}">
+        <img th:src="${challenge.image}" alt="challenge image">
+    </div>
+
+    <div class="card">
+        <h2>Instructions</h2>
+        <p th:text="${challenge.instructions}"></p>
+    </div>
+
+    <hr>
+
+    <div class="card submit-box">
+
+        <h2>Submit your result</h2>
+
+        <form th:action="@{'/challenges/submit/' + ${challenge.id}}"
+              method="post"
+              enctype="multipart/form-data">
+
+            <input type="file" name="image" required>
+
+            <button type="submit">Submit Challenge</button>
+
+        </form>
+
+    </div>
+
+    <div class="back">
+        <a href="/challenges">← Back to Challenges</a>
+    </div>
+
+</div>
+
+</body>
+</html>

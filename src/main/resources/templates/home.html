@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Academy</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/js/lesson.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="top-bar">
+
+        <div class="app-title">
+            Chef Academy
+        </div>
+
+        <div class="user-info">
+            Welcome,
+            <span th:text="${username}"></span>
+        </div>
+
+    </header>
+
+    <section class="continue-section">
+
+    </section>
+
+    <div id="onboardingModal"
+         th:if="${showOnboarding}"
+         >
+
+        <div class="onboarding-box">
+
+            <h2>Σε ποια κεφάλαια θεωρείτε ότι είστε ήδη καταρτισμένος;</h2>
+
+            <form action="/onboarding/save" method="post">
+
+                <div th:each="lesson : ${lessons}"
+                     class="onboarding-item">
+
+                    <label>
+                        <input type="checkbox"
+                               name="lessonIds"
+                               th:value="${lesson.id}">
+                        <span th:text="${lesson.title}"></span>
+                    </label>
+
+                </div>
+
+                <button type="submit" class="onboarding-btn">
+                    Συνέχεια
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <section class="lessons-section">
+
+        <div class="lesson-card"
+             th:each="lesson : ${lessons}"
+             th:classappend="${completedLessons.contains(lesson.id)} ? 'completed' : ''">
+
+            <a th:href="@{'/lesson/' + ${lesson.id}}"
+               th:text="${lesson.title}">
+            </a>
+
+            <span th:if="${completedLessons.contains(lesson.id)}">
+        ✔
+    </span>
+
+        </div>
+
+    </section>
+
+    <footer class="bottom-nav">
+
+        <button onclick="location.href='/challenges'">Challenges</button>
+
+        <button onclick="window.location.href='/statistics'">
+            Statistics
+        </button>
+
+        <button onclick="location.href='/dictionary'">
+            Dictionary
+        </button>
+
+        <button onclick="window.location.href='/login'">
+            Logout
+        </button>
+
+    </footer>
+
+</div>
+
+<script src="/js/onboarding.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+
+    <link rel="stylesheet" href="/statistics.css">
+</head>
+<body>
+
+<div class="stats-container">
+
+    <h1>Your Statistics</h1>
+
+    <div class="stat-box">
+
+        <p>
+            Login Count:
+            <span th:text="${progress.loginCount}"></span>
+        </p>
+
+        <p>
+            Completed Lessons:
+            <span th:text="${progress.completedLessons}"></span>
+        </p>
+
+        <p>
+            Quiz Attempts:
+            <span th:text="${progress.totalQuizAttempts}"></span>
+        </p>
+
+        <p>
+            Correct Answers:
+            <span th:text="${progress.correctAnswers}"></span>
+        </p>
+
+    </div>
+
+    <button onclick="window.location.href='/home'">
+        Back Home
+    </button>
+
+</div>
+
+</body>
+</html>

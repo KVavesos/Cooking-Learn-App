@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f4f4f4, #e9ecef);
+    color: #222;
+}
+
+
+.lesson-container {
+    width: 65%;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+
+.description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+    border-left: 4px solid #333;
+    padding-left: 12px;
+}
+
+
+.content {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-bottom: 12px;
+}
+
+.content ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.content li {
+    margin-bottom: 6px;
+}
+
+
+.content strong {
+    color: #111;
+}
+
+
+.bottom-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.bottom-actions button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.bottom-actions button:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+
+.lesson-img {
+    width: 150px !important;
+    height: 150px !important;
+    display: block !important;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    gap: 10px;
+}
+
+
+.actions button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+
+.actions button.back {
+    background: #e9ecef;
+    color: #333;
+}
+
+.actions button.back:hover {
+    background: #dee2e6;
+    transform: translateY(-2px);
+}
+
+
+.actions button.prev {
+    background: #6c757d;
+    color: white;
+    border-radius: 20px 6px 6px 20px;
+}
+
+.actions button.prev:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+
+.actions button.next {
+    background: #0d6efd;
+    color: white;
+    border-radius: 6px 20px 20px 6px;
+}
+
+.actions button.next:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+
+.actions button.quiz {
+    background: #198754;
+    color: white;
+}
+
+

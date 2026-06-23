@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson</title>
+  <link rel="stylesheet" href="/lesson.css">
+  <script src="/js/lesson.js" defer></script>
+</head>
+
+<body>
+
+<div class="lesson-container">
+
+  <h1 th:text="${lesson.title}"></h1>
+
+  <p class="description" th:text="${lesson.description}"></p>
+
+  <div class="content-window">
+
+    <div class="page" id="page0">
+      <div th:utext="${lesson.content1}"></div>
+
+      <img th:if="${lesson.imageUrl != null}"
+           th:src="${lesson.imageUrl}"
+           class="lesson-img">
+    </div>
+
+    <div class="page" id="page1" style="display:none;">
+      <div th:utext="${lesson.content2}"></div>
+
+      <img th:if="${lesson.image2Url != null}"
+           th:src="${lesson.image2Url}"
+           class="lesson-img">
+    </div>
+
+    <div class="page" id="page2" style="display:none;">
+      <div th:utext="${lesson.content3}"></div>
+
+      <img th:if="${lesson.image3Url != null}"
+           th:src="${lesson.image3Url}"
+           class="lesson-img">
+    </div>
+
+  </div>
+
+  <div class="actions">
+
+    <button class="back" onclick="history.back()">Back</button>
+
+    <button class="prev" onclick="previousPage()">Previous</button>
+
+    <button class="next" onclick="nextPage()">Next</button>
+
+    <button class="quiz" th:onclick="'window.location.href=\'/quiz/' + ${lesson.id} + '\''">
+      Start Quiz
+    </button>
+
+  </div>
+
+</div>
+<script src="/js/lesson.js" defer></script>
+</body>
+</html>

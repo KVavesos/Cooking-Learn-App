@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.dictionary-container {
+    width: 70%;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.dictionary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.term {
+    padding: 15px;
+    border-left: 4px solid #333;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+.term h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #111;
+}
+
+.term p {
+    margin: 5px 0 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.bottom {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.home-btn:hover {
+    background: black;
+    transform: translateY(-2px);
+}

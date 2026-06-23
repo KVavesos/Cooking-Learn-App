@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="/challenges.css">
+  <script src="/js/challenges.js" defer></script>
+</head>
+
+<body>
+
+<div class="progress-container">
+  <div th:if="${success}" class="success-box">
+    ✅ Challenge submitted successfully!
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" th:style="'width:' + ${progress} + '%'"></div>
+  </div>
+
+  <p th:text="${progress + '% completed'}"></p>
+</div>
+
+<div class="challenge-grid">
+
+  <div class="challenge-card"
+       th:each="c : ${challenges}">
+
+    <h3 th:text="${c.title}"></h3>
+
+    <span th:if="${#lists.contains(completedIds, c.id)}">
+        ✔ Completed
+    </span>
+
+    <a th:href="@{'/challenge/' + ${c.id}}">
+      <button>Open</button>
+    </a>
+
+  </div>
+
+</div>
+
+<div id="modal" class="modal">
+
+  <div class="modal-box">
+
+    <form id="uploadForm"
+          method="post"
+          enctype="multipart/form-data">
+
+      <input type="file" name="image" required>
+
+      <button type="submit">Submit</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<div class="reward-center">
+
+  <button th:if="${!isFullyCompleted}"
+          class="reward-btn locked"
+          disabled>
+    🔒 Reward Locked
+  </button>
+  <button th:if="${isFullyCompleted}"
+          class="reward-btn unlocked"
+          onclick="openReward()">
+    🎁 Claim Reward
+  </button>
+
+</div>
+
+
+<div id="finalRewardModal" class="modal">
+
+  <div class="modal-box reward-box">
+
+    <h2>🎉 Reward Unlocked!</h2>
+    <p>You completed all challenges!</p>
+    <p><b>🎁 50$ Voucher for Cooking Equipment</b></p>
+
+    <p class="code">CODE: COOK-50-REWARD</p>
+
+    <button onclick="closeFinalReward()">Close</button>
+
+  </div>
+
+</div>
+
+<a href="/home" class="back-btn">
+  Back Home
+</a>
+<script>
+  function openReward() {
+      document.getElementById("finalRewardModal").style.display = "flex";
+  }
+
+  function closeFinalReward() {
+      document.getElementById("finalRewardModal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

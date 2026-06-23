@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Result</title>
+
+    <link rel="stylesheet" href="/result.css">
+</head>
+<body>
+
+<div class="result-container">
+
+    <h1>Quiz Result</h1>
+
+    <h2>
+        Score:
+        <span th:text="${score}"></span>
+        /
+        <span th:text="${total}"></span>
+    </h2>
+
+    <p th:text="${message}"></p>
+
+    <button onclick="window.location.href='/home'">
+        Back Home
+    </button>
+
+</div>
+
+</body>
+</html>

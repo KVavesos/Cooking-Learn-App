@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+
+  <link rel="stylesheet" href="/quiz.css">
+</head>
+<body>
+
+<div class="quiz-container">
+  <script>
+    let hintCount = 0;
+  </script>
+  <h1>Quiz</h1>
+
+  <form th:action="@{'/quiz/submit/' + ${lessonId}}"
+        method="post">
+    <input type="hidden" name="hintCount" id="hintCountInput">
+    <div class="question-box"
+         th:each="question : ${questions}">
+
+      <h3 th:text="${question.question}"></h3>
+
+      <label>
+        <input type="radio"
+               th:name="${'question_' + question.id}"
+               value="a">
+        <span th:text="${question.optionA}"></span>
+      </label>
+
+      <label>
+        <input type="radio"
+               th:name="${'question_' + question.id}"
+               value="b">
+        <span th:text="${question.optionB}"></span>
+      </label>
+
+      <label>
+        <input type="radio"
+               th:name="${'question_' + question.id}"
+               value="c">
+        <span th:text="${question.optionC}"></span>
+      </label>
+
+      <label>
+        <input type="radio"
+               th:name="${'question_' + question.id}"
+               value="d">
+        <span th:text="${question.optionD}"></span>
+      </label>
+
+
+      <button type="button"
+              class="hint-btn"
+              th:onclick="'toggleHint(' + ${question.id} + ')'">
+        Show Hint
+      </button>
+
+
+      <p class="hint"
+         th:id="${'hint_' + question.id}"
+         style="display:none;"
+         th:if="${question.hint != null}">
+        💡 Hint: <span th:text="${question.hint}"></span>
+      </p>
+
+    </div>
+    <script>
+      document.querySelector("form").addEventListener("submit", function () {
+          document.getElementById("hintCountInput").value = hintCount;
+      });
+    </script>
+    <button type="submit" class="submit-btn">
+      Submit Quiz
+    </button>
+  </form>
+
+</div>
+<script src="/js/quiz.js" defer></script>
+</body>
+</html>
