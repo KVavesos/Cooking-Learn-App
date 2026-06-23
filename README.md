@@ -103,24 +103,24 @@ http://localhost:8080
 ## Screenshots
 
 ###  Login Page
-![Login Page](screenshots/login.png)
+![Login Page](src/main/resources/static/screenshots/login.png)
 
 ---
 
 ###  Home Page
-![Home Page](screenshots/home.png)
+![Home Page](src/main/resources/static/screenshots/home.png)
 
 ---
 
 ###  Challenges Page
-![Challenges Page](screenshots/challenge.jpg)
+![Challenges Page](src/main/resources/static/screenshots/challenge.jpg)
 
 ---
 
 ###  Quiz Page
-![Quiz Page](screenshots/quiz.png)
+![Quiz Page](src/main/resources/static/screenshots/quiz.png)
 
 ---
 
 ###  Lesson Page
-![Lesson Page](screenshots/lesson.png)
+![Lesson Page](src/main/resources/static/screenshots/lesson.png)
