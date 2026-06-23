@@ -9,14 +9,14 @@ The platform combines educational content with interactive features to improve c
 
 ##  Features
 
-- 👤 User registration & login system
-- 📚 Cooking lessons with structured content 
-- 🧠 Interactive quizzes for knowledge testing with hints
-- 🏆 Cooking challenges system 
-- 🏆 final reward upon completion of all challenges
-- 📊 User progress tracking & statistics
-- 🎯 Personalized learning experience
-- 🖼️ Static content (images, UI design, etc.)
+- User registration & login system
+-  Cooking lessons with structured content 
+-  Interactive quizzes for knowledge testing with hints
+-  Cooking challenges system 
+-  final reward upon completion of all challenges
+-  User progress tracking & statistics
+-  Personalized learning experience
+-  Static content (images, UI design, etc.)
 
 ---
 
