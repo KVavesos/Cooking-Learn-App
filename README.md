@@ -39,10 +39,10 @@ src/
     main-----
        java----
           com.example.cookinglearnapp
-              controller
-              model
-              repository
-              service
+              controller(5 controllers)
+              model(8 models)
+              repository(8 repositories)
+              service(5 services)
               CookinglearnappApplication.java
        resources----
           static----
@@ -87,6 +87,10 @@ DB_PASSWORD=your_password
 **Windows:**
 ```bash
 mvnw.cmd spring-boot:run
+```
+**Mac/Linux**
+```bash
+./mvnw spring-boot:run
 ```
 
 ### 4. Open in browser
