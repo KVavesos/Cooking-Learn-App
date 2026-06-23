@@ -98,3 +98,29 @@ mvnw.cmd spring-boot:run
 Open your browser and go to:
 
 http://localhost:8080
+
+
+## Screenshots
+
+###  Login Page
+![Login Page](screenshots/login.png)
+
+---
+
+###  Home Page
+![Home Page](screenshots/home.png)
+
+---
+
+###  Challenges Page
+![Challenges Page](screenshots/challenge.jpg)
+
+---
+
+###  Quiz Page
+![Quiz Page](screenshots/quiz.png)
+
+---
+
+###  Lesson Page
+![Lesson Page](screenshots/lesson.png)
